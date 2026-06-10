@@ -1,4 +1,4 @@
-# IP-Discrambler
+# IP Descrambler
 
 IP Descrambler is a React + TypeScript + Vite + Tailwind privacy-defense concept demo.
 
