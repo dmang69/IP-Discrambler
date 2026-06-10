@@ -10,6 +10,14 @@ npm.cmd run dev
 npm.cmd run build
 ```
 
+Cross-platform equivalents:
+
+```bash
+npm install
+npm run dev
+npm run build
+```
+
 ## Notes
 
 - The UI demonstrates tracker blocking, tracker poisoning concepts, and privacy-leak analysis with local synthetic data.
