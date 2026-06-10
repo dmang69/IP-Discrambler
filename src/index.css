@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+
+:root {
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  color: #e7f9ff;
+  background-color: #05060b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(22, 163, 255, 0.12), transparent 42%),
+    radial-gradient(circle at 20% 90%, rgba(96, 80, 220, 0.15), transparent 38%),
+    #05060b;
+  color: #d8edff;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridShift 10s linear infinite;
+}
+
+#root {
+  isolation: isolate;
+}
+
+.section-grid {
+  @apply mt-4 grid gap-4 md:grid-cols-2;
+}
+
+.section-card {
+  @apply mt-4 rounded-xl border border-cyan-400/30 bg-black/35 p-4 shadow-[0_0_24px_rgba(0,255,255,0.08)];
+}
+
+.network-map {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(50, 220, 255, 0.35);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  min-height: 13rem;
+  display: grid;
+  gap: 0.6rem;
+  background: linear-gradient(140deg, rgba(8, 12, 24, 0.9), rgba(4, 4, 10, 0.85));
+}
+
+.network-node {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 255, 255, 0.22);
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.5rem;
+  background-color: rgba(16, 33, 44, 0.45);
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(72, 240, 255, 0.95), transparent);
+  animation: scan 2.6s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(165px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes gridShift {
+  from { transform: translateY(0); }
+  to { transform: translateY(40px); }
+}
